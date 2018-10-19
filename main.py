@@ -1,3 +1,16 @@
+# template to be used when documenting functions
+################################################
+# FUNCTION NAME :
+# FUNCTION ARGS : 
+# FUNCTION RETURN :
+# PURPOSE : 
+################################################
+
+# Foreword:
+# The map is split into 190 cells
+# A cell is regarded as 'traversable' if it is empty and has not
+# been travelled through before
+
 class Game():
     def __init__(self):
         self.game_map = []
@@ -15,10 +28,26 @@ class Game():
             self.game_map.append(line)
         self.robot_count = int(input())
     
-    # 
-    def get_free(self,x,y):
+    # FUNCTION NAME : get_neighbours
+    # FUNCTION ARGS : x and y position of a cell
+    # FUNCTION RETURN : amount of cell 'neighbours'
+    # PURPOSE : gets the amount of traversable neighbouring cells to the robot
+    def get_neighbours(self,x,y):
+        # TO BE IMPLEMENTED
         pass
     
+    # FUNCTION NAME : get_free
+    # FUNCTION ARGS : x and y position of a cell
+    # FUNCTION RETURN : x and y position of a neighbouring cell
+    # PURPOSE : returns the position of the only traversable neighbouring cell to the robot
+    def get_free(self,x,y):
+        # TO BE IMPLEMENTED
+        pass
+    
+    # FUNCTION NAME : move
+    # FUNCTION ARGS : x and y position and direction
+    # FUNCTION RETURN : new x and y position
+    # PURPOSE : modifies an x and y coordinate based on a direction
     def move(self,x,y,direction):
         if (direction == "U"):
             y += -1
@@ -52,3 +81,4 @@ class Game():
         print("0 0 U 1 1 R 2 2 D 3 3 L")
 
 game = Game()
+
