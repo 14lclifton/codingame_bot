@@ -1,8 +1,13 @@
+# FUNCTION NAME : getFree
+# FUNCTION PARAMETERS : X and Y POS
+def getFree(x,y):
+    pass
+
 # reading game map
-gameMap = []
+game_map = []
 for i in range(10):
     line = input()
-    gameMap.append(line)
+    game_map.append(line)
 robot_count = int(input())
 
 # Main logic
@@ -13,5 +18,6 @@ for i in range(robot_count):
     y = int(y)
     
     # Determine where to place flags
-    
+    cell_is_on = game_map[x][y]
+
 print("0 0 U 1 1 R 2 2 D 3 3 L")
