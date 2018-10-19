@@ -15,6 +15,7 @@ class Game():
     def __init__(self):
         self.game_map = []
         self.robot_count = 0
+        self.arrows = []
         self.read_map()
         self.run()
     
@@ -43,6 +44,9 @@ class Game():
     def get_free(self,x,y):
         # TO BE IMPLEMENTED
         pass
+    
+    def add_arrow(self,x,y,direction):
+        new_arrow = str(x)+str(y)+direction
     
     # FUNCTION NAME : move
     # FUNCTION ARGS : x and y position and direction
@@ -74,11 +78,16 @@ class Game():
             robot_map = self.new_robot_map()
             cell_is_on = robot_map[y][x]
             
-            # Simulate the robot's movements
-            x,y = self.move(x,y,direction)
+            while 1:
+                # Simulate the robot's movements
+                x,y = self.move(x,y,direction)
+                neighbours = self.get_neighbours(x,y)
+                if not neighbours:
+                    break
+                else if (neighbours == 1):
+                    
             
         # Print final result
         print("0 0 U 1 1 R 2 2 D 3 3 L")
 
 game = Game()
-
